@@ -1,0 +1,116 @@
+.snav-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.is-mobile .snav-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+h1.app-name {
+  margin-left: 8px;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+.is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}
+
+mat-sidenav-content {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.logo-card {
+  max-width: 400px;
+}
+
+.active-list-item {
+  color: #3F51B5 !important;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  padding: 30px;
+  width: 25%;
+}
+
+
+.logo-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 14%;
+}
+
+.uni-title {
+  font-family: "uni-title";
+  font-size: 32px;
+  text-align: center;
+}
+
+.uni-sub {
+  font-family: "uni-sub";
+  font-size: 32px;
+  text-align: center;
+}
+
+.std-name {
+  font-family: "student-name";
+  font-size: 30px;
+  text-align: center;
+  padding: 3%;
+}
+
+.degree-body {
+  text-align: center;
+  font-family: "degree-body";
+  font-size: 20px;
+}
+
+.endorser-sign {
+    text-align: left;
+    font-size: 20px;
+    margin-left: 20%;
+    padding: 1%;
+    font-family: "degree-body";
+}
+
+.main-div {
+  background-color: white;
+  width: 90%;
+  height: auto;
+}
+
+@font-face {
+  font-family: 'student-name';
+  src: url('/assets/fonts/OPTIOptionMedium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'uni-sub';
+  src: url('/assets/fonts/ITCErasStd-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'uni-title';
+  src: url('/assets/fonts/Charter-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'degree-body';
+  src: url('/assets/fonts/Oregon-LDO.ttf') format('opentype');
+}

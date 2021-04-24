@@ -1,0 +1,12 @@
+<div fxLayoutAlign="center center" fxFlexFill class="login-main-div">
+  <mat-card fxFlex="30">
+    <mat-toolbar color="primary">Degree Verification System </mat-toolbar>
+    <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup" (ngSubmit)="searchProcess()">
+      <mat-form-field>
+        <mat-label>Student ID</mat-label>
+        <input matInput placeholder="Student ID" formControlName="student_id">
+      </mat-form-field>
+      <button mat-raised-button class="submit-button" type="submit">Search</button>
+    </form>
+  </mat-card>
+</div>

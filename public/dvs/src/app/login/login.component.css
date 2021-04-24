@@ -1,0 +1,13 @@
+.login-main-div mat-card {
+  padding: 0px;
+}
+.login-form {
+  padding: 20px;
+}
+
+span {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  font-size: 150%;
+}

@@ -1,0 +1,70 @@
+<div class="snav-container" [class.is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="snav-toolbar">
+    <button mat-icon-button (click)="!snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="app-name">Degree Verfication System</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav opened="true" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <mat-card class="logo-card">
+          <img mat-card-image src="https://www.captivate.com/wp-content/uploads/2019/02/Degree-Logo.png" alt="Photo of a Shiba Inu">
+        </mat-card>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/exam/view-students" routerLinkActive="active-list-item">View All Students</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/exam/new-student" routerLinkActive="active-list-item">Create New Student</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/change-password" routerLinkActive="active-list-item">Change Password</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/login">Logout</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <h1> Create New Student </h1>
+
+      <div class="mat-elevation-z8">
+        <form [formGroup]="formGroup" (ngSubmit)="registerStudentProcess()">
+          <mat-form-field appearance="standard">
+            <mat-label>Student ID</mat-label>
+            <input matInput placeholder="student id" formControlName="student_id">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="first name" formControlName="first_name">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="last name" formControlName="last_name">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Degree Title</mat-label>
+            <input matInput placeholder="degree title" formControlName="degree_title">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Degree Programme</mat-label>
+            <input matInput placeholder="degree programme" formControlName="degree_programme">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Degree Class</mat-label>
+            <input matInput placeholder="degree class" formControlName="degree_class">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Completion Year</mat-label>
+            <input matInput placeholder="completion year" formControlName="completion_year">
+          </mat-form-field>
+          <br>
+          <mat-spinner [diameter]="50" *ngIf="spin"></mat-spinner>
+          <button mat-raised-button *ngIf="!spin" color="primary" type="submit">Register</button>
+        </form>
+      </div>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>

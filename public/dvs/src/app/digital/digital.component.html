@@ -1,0 +1,62 @@
+<div class="snav-container" [class.is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="snav-toolbar">
+    <button mat-icon-button (click)="!snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="app-name">Degree Verfication System</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav opened="true" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <mat-card class="logo-card">
+          <img mat-card-image src="https://www.captivate.com/wp-content/uploads/2019/02/Degree-Logo.png" alt="Photo of a Shiba Inu">
+        </mat-card>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/degree/digital" routerLinkActive="active-list-item">View Digital Degree</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/degree/view-student">View Student Data</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="">Go back</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <br> <br>
+      <div class="mat-elevation-z8 main-div">
+        <br>
+        <img class="logo-image" src="assets/uni-logo.png" alt="University Logo"> <br>
+        <div style="text-align: center;">
+          <span class="uni-title">London South Bank</span> <br>
+          <span class="uni-sub">University</span>
+        </div>
+        <div class="std-name">
+          {{student_data.first_name | uppercase}} {{student_data.last_name | uppercase}}
+        </div>
+        <div class="degree-body">
+          has been awarded the degree of <br> {{student_data.degree_title | uppercase}} <br> with {{student_data.degree_class | uppercase}} <br>
+          having followed an approved honours programme <br> in {{student_data.degree_programme | uppercase}}
+        </div>
+        <div style="padding:4%" class="degree-body">
+          {{student_data.completion_year | date}}
+        </div>
+        <div class="endorser-sign">
+          <span *ngIf="pcSign" style="background-color: #91e6fe">{{student_data.pro_chancellor.endorser_hashID}} </span> <span *ngIf="pcSign"> (Digital Sign)</span>
+          <br>
+          <span style="text-decoration: overline"> Pro Chancellor</span>
+        </div>
+        <div class="endorser-sign">
+          <span  *ngIf="vcSign" style="background-color: #91e6fe">{{this.student_data.vice_chancellor.endorser_hashID}}</span> <span *ngIf="vcSign">(Digital Sign)</span>
+          <br>
+          <span style="text-decoration: overline"> Vice Chancellor</span>
+        </div>
+
+        <br><br>
+      </div>
+      <br><br><br>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

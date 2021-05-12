@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
           else if (results.role == "PC" || results.role == "VC")
             this.router.navigate(['endorser'])
         } else {
-          console.log("faile");
+          alert("failed");
         }
       }, error => {
         alert(error.error);

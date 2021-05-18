@@ -6,10 +6,17 @@
 export PATH=${PWD}/../../bin:${PWD}:$PATH
 export FABRIC_CFG_PATH=${PWD}/../configtx
 cd ..
-#scripts/deployCC.sh userchannel user 10
-scripts/deployCC.sh degreechannel degree 9
+#scripts/deployCC.sh userchannel user
 
 if [ $? -ne 0 ]; then
-  echo "ERROR !!! Deploying chaincode failed"
+  echo "ERROR !!! Deploying user chaincode failed"
+  exit 1
+fi
+
+
+scripts/deployCC.sh degreechannel degree 5
+
+if [ $? -ne 0 ]; then
+  echo "ERROR !!! Deploying degree chaincode failed"
   exit 1
 fi

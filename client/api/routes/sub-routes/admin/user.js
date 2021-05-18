@@ -245,8 +245,6 @@ module.exports.user_apis = function(router) {
       api_functions.authenticateToken(req, res, function(req, res) {
 
         let username = req.body.username;
-        console.log(req.user_id);
-
         nextFunction = function(return_args) {
           if (return_args.status == 200) {
             res

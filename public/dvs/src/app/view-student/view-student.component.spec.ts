@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { ViewStudentComponent } from './view-student.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
 
 describe('ViewStudentComponent', () => {
   let component: ViewStudentComponent;
@@ -8,6 +10,7 @@ describe('ViewStudentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[RouterTestingModule, HttpClientModule, MatDialogModule],
       declarations: [ ViewStudentComponent ]
     })
     .compileComponents();

@@ -49,9 +49,9 @@ func (s *SmartContract) CreateDegree(ctx contractapi.TransactionContextInterface
 
 	degree_id := `deg-` + student_id
 
-	check_degree, err := getDegree(ctx, degree_id)
+	check_degree, _ := getDegree(ctx, degree_id)
 
-	if err != nil {
+	if check_degree != nil {
 		if check_degree.Active_status {
 			return fmt.Errorf("Data Already Exists!")
 		}

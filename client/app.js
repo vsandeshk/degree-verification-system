@@ -20,6 +20,7 @@ app.use(function(req, res, next) {
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use('/api', routes);
-
-
- server = app.listen(port);
+app.get('/', (req, res) => {
+  res.sendStatus(200)
+})
+server = app.listen(port);
